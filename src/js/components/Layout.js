@@ -7,18 +7,20 @@ export default class Layout extends React.Component {
 
   constructor() {
     super();
-    this.state = {name: "Jeff"};
+    this.state = {
+      title: "Welcome",
+    };
   }
-
 
   render() {
     setTimeout(() => {
-      this.setState({name: "Bob"});
-    }, 1000)
+      this.setState({title: "Welcome Jeff!"});
+    }, 2000);
+
     return (
       <div>
-        {this.state.name}
-        <Header />
+        <Header title={this.state.title} />
+        <Header title={"Other Title"} />
         <Footer />
       </div>
     );
